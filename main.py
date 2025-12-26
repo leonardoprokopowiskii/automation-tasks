@@ -6,9 +6,7 @@ CAMINHO_EXCEL = "testes-automation.xlsx"
 
 EMAIL_POR_PESSOA = {
     "João": "joao@email.com",
-    "Maria": "maria@email.com",
     "Samuel Nascimento": "samuel.nascimento@sprogroup.com.br",
-    "Daniel Pereira": ""
 }
 
 
@@ -27,39 +25,84 @@ def montar_email_html(pessoa, tasks):
     for t in tasks:
         linhas += f"""
             <tr>
-                <td>{t['ID']}</td>
+                <td>
+                    <a href="https://dev.azure.com/sprogroup/SPRO_Fomento/_workitems/edit/{t['ID']}">
+                        {t['ID']}
+                    </a>
+                </td>
                 <td>{t['Title']}</td>
                 <td>{t['State']}</td>
             </tr>
-        """
+    """
 
     return f"""
-    <html>
-      <body style="font-family: Arial, sans-serif; font-size: 14px;">
-        <p>Olá <b>{pessoa}</b>,</p>
+        <html>
+            <body style="
+                font-family: Arial, Helvetica, sans-serif;
+                font-size: 14px;
+                color: #000;
+            ">
 
-        <p>Segue a lista das suas tasks:</p>
+                <p>Olá, <b>{pessoa}</b>,</p>
 
-        <table border="1" cellpadding="6" cellspacing="0"
-               style="border-collapse: collapse;">
-          <tr style="background-color:#f0f0f0;">
-            <th>ID</th>
-            <th>Título</th>
-            <th>Status</th>
-          </tr>
-          {linhas}
-        </table>
+                <p>
+                    Identificamos que você possui itens com risco de atraso ou atraso na Sprint atual.
+                    Contamos com seu apoio para revisar e ajustar essas atividades,
+                    garantindo a padronização e rastreabilidade das informações.
+                </p>
 
-        <p style="margin-top:20px;">
-          Por favor, verifique e ajuste se necessário.
-        </p>
+                <p style="font-style: italic;">
+                    Obs: verifique se os campos estão corretamente preenchidos.
+                </p>
 
-        <p>Atenciosamente,</p>
+                <p><b>Segue a relação de itens:</b></p>
 
-        <!-- assinatura depois -->
-        <p><b>Automação</b></p>
-      </body>
-    </html>
+                <table width="60%" cellpadding="6" cellspacing="0"
+                    style="border-collapse: collapse; font-size: 13px;">
+                    <tr style="background-color:#5B9BD5; color:#fff;">
+                        <th align="left">ID</th>
+                        <th align="left">Title</th>
+                        <th align="left">State</th>
+                    </tr>
+
+                    {linhas}
+                </table>
+
+                <p style="margin-top:15px;">
+                    Ao clicar no <b>ID</b>, você será direcionado à atividade correspondente.
+                </p>
+
+                <p>
+                    Lembrando que a <b>atualização dos campos</b>, status real da atividade
+                    e comentários de andamento são essenciais para garantir a visão
+                    consolidada da Sprint.
+                </p>
+
+                <p><b>ATENÇÃO:</b> Ao finalizar uma atividade, incluir anexo/link das evidências de testes.</p>
+
+                <p>
+                    Caso as informações já estejam atualizadas, favor desconsiderar este e-mail.
+                </p>
+
+                <p>
+                <b>Documentação:</b><br>
+                <a href="https://docs.sprogroup.com.br/books/operacoes-na-area-de-produtos-spro/page/estrutura-azure-devops">
+                    https://docs.sprogroup.com.br/books/operacoes-na-area-de-produtos-spro/page/estrutura-azure-devops
+                </a>
+                </p>
+
+                <br>
+
+                <p>Atenciosamente,</p>
+
+                <!-- ASSINATURA -->
+                <img src="https://SEU_LINK_PUBLICO_DA_ASSINATURA.png"
+                    alt="SPRO Group"
+                    style="width:420px;">
+
+            </body>
+        </html>
+
     """
 
 
