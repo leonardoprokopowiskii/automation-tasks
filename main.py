@@ -1,45 +1,9 @@
 from excel_to_json import converter_excel_para_json
 from group_tasks import agrupar_por_pessoa
 from send_email import enviar_email
+from emails_list import EMAIL_POR_PESSOA    
 
 CAMINHO_EXCEL = "testes-automation.xlsx"
-
-EMAIL_POR_PESSOA = {
-    "alessandra_rocha": "alessandra.rocha@sprogroup.com.br",
-    "caroline_schuck": "caroline.schuck@sprogroup.com.br",
-    "claudio_zonner": "claudio.zonner@sprogroup.com.br",
-    "daniel_pereira": "daniel.pereira@sprogroup.com.br",
-    "daniele_costa": "daniele.costa@sprogroup.com.br",
-    "edimar_biondo": "edimar.biondo@sprogroup.com.br",
-    "eduardo_godoy": "eduardo.godoy@spro.com.br",
-    "gabrieli_nataly": "gabrieli.nataly@sprogroup.com.br",
-    "giovani_bellani": "giovani.bellani@spro.com.br",
-    "giovani_bueno": "giovani.bueno@sprogroup.com.br",
-    "guilherme_guimaraes": "guilherme.guimaraes@sprogroup.com.br",
-    "jessica_lima": "jessica.lima@sprogroup.com.br",
-    "josiane_fadel": "josiane.fadel@spro.com.br",
-    "lucas_meneguelli": "lucas.meneguelli@sprogroup.com.br",
-    "luiz_piekarski": "luiz.piekarski@spro.com.br",
-    "luiz_gomes": "luiz.gomes@sprogroup.com.br",
-    "luiz_felipe": "luiz.felipe@sprogroup.com.br",
-    "luiz_pedrozo": "luiz.pedrozo@sprogroup.com.br",
-    "maicel_junior": "maicel.junior@spro.com.br",
-    "mainara_faustino": "mainara.faustino@sprogroup.com.br",
-    "matheus_pelegrini": "matheus.pelegrini@sprogroup.com.br",
-    "mauro_souza": "mauro.souza@spro.com.br",
-    "milene_martins": "milene.martins@sprogroup.com.br",
-    "natacia_pozatti": "natacia.pozatti@sprogroup.com.br",
-    "rafaela_albuquerque": "rafaela.albuquerque@sprogroup.com.br",
-    "regiane_able": "regiane.able@sprogroup.com.br",
-    "renato_schipfer": "renato.schipfer@sprogroup.com.br",
-    "gustavo_finatti": "gustavo.finatti@spro.com.br",
-    "thabata_fachina": "thabata.fachina@sprogroup.com.br",
-    "vanessa_berwanger": "vanessa.berwanger@sprogroup.com.br",
-    "victor_negrao": "victor.negrao@spro.com.br",
-    "renato_santos": "renato.santos@sprogroup.com.br",
-    "nathalia_alves": "nathalia.alves@sprogroup.com.br",
-    "derik_melo": "derik.melo@sprogroup.com.br",
-}
 
 def montar_email_texto(pessoa, tasks):
     corpo = f"Olá {pessoa},\n\nSegue a lista das suas tasks:\n\n"
