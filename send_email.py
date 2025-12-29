@@ -11,7 +11,7 @@ SMTP_PORTA = 587
 
 EMAIL_CC_PADRAO = "leonardo.lemes@sprogroup.com.br"
 
-def enviar_email(destinatario, assunto, corpo_texto, corpo_html=None):
+def enviar_email(destinatario, assunto, corpo_html=None):
 
     msg = MIMEMultipart("related")
     msg["From"] = EMAIL_REMETENTE

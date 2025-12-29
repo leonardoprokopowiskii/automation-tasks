@@ -2,7 +2,7 @@ EMAIL_POR_PESSOA = {
     "Alessandra Rocha": "alessandra.rocha@sprogroup.com.br",
     "Caroline Schuck": "caroline.schuck@sprogroup.com.br",
     "Claudio Zonner": "claudio.zonner@sprogroup.com.br",
-    "Daniel Pereira": "daniel.pereira@sprogroup.com.br",
+    "Daniel Pereira": "samuel.nascimento@sprogroup.com.br",
     "Daniele Costa": "daniele.costa@sprogroup.com.br",
     "Edimar Biondo": "edimar.biondo@sprogroup.com.br",
     "Eduardo Godoy": "eduardo.godoy@spro.com.br",
