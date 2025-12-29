@@ -5,28 +5,25 @@ from emails_list import EMAIL_POR_PESSOA
 
 CAMINHO_EXCEL = "testes-automation.xlsx"
 
-def montar_email_texto(pessoa, tasks):
-    corpo = f"Olá {pessoa},\n\nSegue a lista das suas tasks:\n\n"
-
-    for t in tasks:
-        corpo += f"- #{t['ID']} | {t['Title']} | {t['State']}\n"
-
-    corpo += "\nPor favor, verifique e ajuste conforme necessário.\n\nAtenciosamente."
-    return corpo
-
-
 def montar_email_html(pessoa, tasks):
     linhas = ""
+    LIMITE_CARACTERES = 35
+
     for t in tasks:
+        # Lógica para adicionar reticências se o título for longo
+        titulo = t['Title']
+        if len(titulo) > LIMITE_CARACTERES:
+            titulo = titulo[:LIMITE_CARACTERES] + "..."
+
         linhas += f"""
             <tr>
-                <td>
+                <td style="border-bottom: 1px solid #eee; padding: 8px;">
                     <a href="https://dev.azure.com/sprogroup/SPRO_Fomento/_workitems/edit/{t['ID']}">
                         {t['ID']}
                     </a>
                 </td>
-                <td>{t['Title']}</td>
-                <td>{t['State']}</td>
+                <td style="border-bottom: 1px solid #eee; padding: 8px;">{titulo}</td>
+                <td style="border-bottom: 1px solid #eee; padding: 8px;">{t['State']}</td>
             </tr>
         """
 
@@ -129,13 +126,11 @@ def main():
             print(f"⚠️ Sem email cadastrado para {pessoa}, pulando...")
             continue
 
-        texto = montar_email_texto(pessoa, lista_tasks)
         html = montar_email_html(pessoa, lista_tasks)
 
         enviar_email(
             destinatario=EMAIL_POR_PESSOA[pessoa],
-            assunto="Resumo das suas tasks",
-            corpo_texto=texto,
+            assunto="Cobrança automática de Tasks irregulares",
             corpo_html=html
         )
 
