@@ -2,6 +2,7 @@ import smtplib
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
 
+
 EMAIL_REMETENTE = "leoprokopowiskii@gmail.com"
 SENHA = "iquv lbcp fhry sntw"  # ideal depois jogar em variável de ambiente
 SMTP_SERVIDOR = "smtp.gmail.com"

@@ -46,7 +46,7 @@ def montar_email_html(pessoa, tasks):
                 <p>Olá, <b>{pessoa}</b>,</p>
 
                 <p>
-                    Identificamos que você possui itens com risco de atraso ou atraso na Sprint atual.
+                    Identificamos que você possui itens com irretgularidades (campos relacionados a horas e datas).
                     Contamos com seu apoio para revisar e ajustar essas atividades,
                     garantindo a padronização e rastreabilidade das informações.
                 </p>
@@ -84,19 +84,12 @@ def montar_email_html(pessoa, tasks):
                     Caso as informações já estejam atualizadas, favor desconsiderar este e-mail.
                 </p>
 
-                <p>
-                <b>Documentação:</b><br>
-                <a href="https://docs.sprogroup.com.br/books/operacoes-na-area-de-produtos-spro/page/estrutura-azure-devops">
-                    https://docs.sprogroup.com.br/books/operacoes-na-area-de-produtos-spro/page/estrutura-azure-devops
-                </a>
-                </p>
-
                 <br>
 
                 <p>Atenciosamente,</p>
 
                 <!-- ASSINATURA -->
-                <img src="https://SEU_LINK_PUBLICO_DA_ASSINATURA.png"
+                <img src="https://vexpro.sharepoint.com/sites/readeProdutos/Documentos%20Compartilhados/Forms/AllItems.aspx?viewid=05baabf9%2D9a84%2D46c3%2D9002%2D8bd7015ba6fc&ga=1&id=%2Fsites%2FreadeProdutos%2FDocumentos%20Compartilhados%2FProductTechTeam%2FEquipe%20de%20Produtos%2FEquipe%2Fass%2DLeonardo%20Prokopowiski%2Epng&parent=%2Fsites%2FreadeProdutos%2FDocumentos%20Compartilhados%2FProductTechTeam%2FEquipe%20de%20Produtos%2FEquipe"
                     alt="SPRO Group"
                     style="width:420px;">
 
