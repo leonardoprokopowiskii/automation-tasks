@@ -89,7 +89,7 @@ def montar_email_html(pessoa, tasks):
                 <p>Atenciosamente,</p>
 
                 <!-- ASSINATURA -->
-                <img src="https://vexpro.sharepoint.com/sites/readeProdutos/Documentos%20Compartilhados/Forms/AllItems.aspx?viewid=05baabf9%2D9a84%2D46c3%2D9002%2D8bd7015ba6fc&ga=1&id=%2Fsites%2FreadeProdutos%2FDocumentos%20Compartilhados%2FProductTechTeam%2FEquipe%20de%20Produtos%2FEquipe%2Fass%2DLeonardo%20Prokopowiski%2Epng&parent=%2Fsites%2FreadeProdutos%2FDocumentos%20Compartilhados%2FProductTechTeam%2FEquipe%20de%20Produtos%2FEquipe"
+                <img src="assets/assinatura.png"
                     alt="SPRO Group"
                     style="width:420px;">
 
